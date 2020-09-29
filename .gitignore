@@ -1,5 +1,5 @@
 ###################################
-## Vue.js
+## Client
 
 .DS_Store
 /client/node_modules
@@ -27,3 +27,11 @@
 *.njsproj
 *.sln
 *.sw?
+
+###################################
+## Server
+
+/server/node_modules
+/server/**/coverage
+/server/ecosystem.config.js
+/server.env
