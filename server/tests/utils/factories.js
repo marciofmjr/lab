@@ -5,7 +5,8 @@ const {
   User,
   CollectPoint,
   Doctor,
-  Exam
+  Exam,
+  Customer
 } = require('../../src/app/main/models')
 
 factory.define('User', User, {
@@ -49,6 +50,28 @@ const examsIndex = Math.floor(Math.random() * ((exams.length - 1) - 0) + 0)
 factory.define('Exam', Exam, {
   name: exams[examsIndex],
   price: faker.commerce.price,
+})
+
+const ctZipcode = faker.address.zipCode()
+const ctStreet = faker.address.streetAddress()
+const ctNumber = Math.floor(Math.random() * (1000 - 100) + 100)
+const ctNeighborhood = faker.address.streetAddress()
+const ctState = faker.address.stateAbbr()
+const ctCity = faker.address.city()
+const ctAddress = `${cpStreet}, ${cpNumber} - ${cpNeighborhood}, ${cpCity} - ${cpState}, ${cpZipcode}`
+
+factory.define('Customer', Customer, {
+  name: faker.name.findName(),
+  birthday: faker.date.past,
+  gender: Math.random() >= 0.5 ? 'M': 'F',
+  zipcode: ctZipcode,
+  street: ctStreet,
+  number: ctNumber,
+  complement: '',
+  neighborhood: ctNeighborhood,
+  state: ctState,
+  city: ctCity,
+  address: ctAddress
 })
 
 module.exports = factory
