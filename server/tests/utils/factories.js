@@ -4,7 +4,8 @@ const faker = require('faker-br')
 const {
   User,
   CollectPoint,
-  Doctor
+  Doctor,
+  Exam
 } = require('../../src/app/main/models')
 
 factory.define('User', User, {
@@ -40,6 +41,14 @@ const specialtyIndex = Math.floor(Math.random() * ((specialities.length - 1) - 0
 factory.define('Doctor', Doctor, {
   name: faker.name.findName(),
   specialty: specialities[specialtyIndex],
+})
+
+const exams = ['Ecocardiograma', 'Eletrocardiograma', 'Teste de esforço', 'Holter', 'M.A.P.A']
+const examsIndex = Math.floor(Math.random() * ((exams.length - 1) - 0) + 0)
+
+factory.define('Exam', Exam, {
+  name: exams[examsIndex],
+  price: faker.commerce.price,
 })
 
 module.exports = factory

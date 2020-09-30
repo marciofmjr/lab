@@ -4,8 +4,8 @@
 - [x] Tests for PostColetas
 - [x] Migration and seeds for Medico (doctors),
 - [x] Tests for Medicos
-- [ ] Migration and seeds for Exames (exams),
-- [ ] Tests for Exames
+- [x] Migration and seeds for Exames (exams),
+- [x] Tests for Exames
 - [ ] Migration and seeds for Pacientes (customers),
 - [ ] Tests for Pacientes
 - [ ] Migration and seeds for Ordens de Serviço (orders),
