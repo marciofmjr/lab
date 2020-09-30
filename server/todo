@@ -3,7 +3,7 @@
 - [x] Migration and seeds for PostoColeta (collect_points),
 - [x] Tests for PostColetas
 - [x] Migration and seeds for Medico (doctors),
-- [ ] Tests for Medicos
+- [x] Tests for Medicos
 - [ ] Migration and seeds for Exames (exams),
 - [ ] Tests for Exames
 - [ ] Migration and seeds for Pacientes (customers),

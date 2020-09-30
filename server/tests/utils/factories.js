@@ -3,7 +3,8 @@ const faker = require('faker-br')
 
 const {
   User,
-  CollectPoint
+  CollectPoint,
+  Doctor
 } = require('../../src/app/main/models')
 
 factory.define('User', User, {
@@ -31,6 +32,14 @@ factory.define('CollectPoint', CollectPoint, {
   state: cpState,
   city: cpCity,
   address: cpAddress,
+})
+
+const specialities = ['Cardiologista', 'Dermatologista', 'Endocrinologista', 'Neurologista', 'Nutricionista', 'Oftalmologista', 'Ortopedista', 'Otorrinolaringologista', 'Pneumologista']
+const specialtyIndex = Math.floor(Math.random() * ((specialities.length - 1) - 0) + 0)
+
+factory.define('Doctor', Doctor, {
+  name: faker.name.findName(),
+  specialty: specialities[specialtyIndex],
 })
 
 module.exports = factory
