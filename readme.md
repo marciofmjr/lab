@@ -1,6 +1,8 @@
 # Lab
 
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
+[![Inline docs](http://inch-ci.org/github/marciofmjr/lab.svg?branch=master)](http://inch-ci.org/github/marciofmjr/lab)
+[![Inline docs](http://inch-ci.org/github/marciofmjr/agrimin-backend.svg?branch=master)](http://inch-ci.org/github/marciofmjr/agrimin-backend)
 
 
 :hospital: (Laboratório) é um projeto para demonstrar habilidades de desenvolvimento. Ele é um painel de uma clínica que deve cadastrar ordens de serviço de pacientes que vão fazer exames médicos.
