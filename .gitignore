@@ -28,6 +28,8 @@
 *.sln
 *.sw?
 
+**/*teste.pdf
+
 ###################################
 ## Server
 
@@ -35,3 +37,4 @@
 /server/**/coverage
 /server/ecosystem.config.js
 /server.env
+**/*teste.pdf
