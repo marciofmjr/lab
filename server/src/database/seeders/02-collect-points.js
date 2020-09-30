@@ -1,4 +1,5 @@
 'use strict'
+const table = 'collect_points'
 
 const data = [
   {
@@ -19,10 +20,10 @@ const data = [
 
 module.exports = {
   up: async (queryInterface) => {
-    return queryInterface.bulkInsert('collect_points', data)
+    return queryInterface.bulkInsert(table, data)
   },
 
   down: async (queryInterface) => {
-    return queryInterface.bulkDelete('collect_points', null, {})
+    return queryInterface.bulkDelete(table, null, {})
   }
 }

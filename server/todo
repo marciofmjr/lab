@@ -1,8 +1,8 @@
 - [x] Migration and seeds for Usuários (users)
 - [x] Create mechanic to authenticate
-- [ ] Migration and seeds for PostoColeta (collect_points),
-- [ ] Tests for PostColetas
-- [ ] Migration and seeds for Medico (doctors),
+- [x] Migration and seeds for PostoColeta (collect_points),
+- [x] Tests for PostColetas
+- [x] Migration and seeds for Medico (doctors),
 - [ ] Tests for Medicos
 - [ ] Migration and seeds for Exames (exams),
 - [ ] Tests for Exames
