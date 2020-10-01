@@ -11,5 +11,9 @@ module.exports = (sequelize, DataTypes) => {
     address: DataTypes.STRING,
   })
 
+  CollectPoint.associate = models => {
+    CollectPoint.hasMany(models.Order, { foreignKey: 'id', as: 'orders'})
+  }
+
   return CollectPoint
 }

@@ -6,7 +6,8 @@ const {
   CollectPoint,
   Doctor,
   Exam,
-  Customer
+  Customer,
+  Order
 } = require('../../src/app/main/models')
 
 factory.define('User', User, {
@@ -72,6 +73,14 @@ factory.define('Customer', Customer, {
   state: ctState,
   city: ctCity,
   address: ctAddress
+})
+
+factory.define('Order', Order, {
+  date: faker.date.past,
+  healthInsurance: 'Unimed',
+  customerId: null,
+  doctorId: null,
+  collectPointId: null,
 })
 
 module.exports = factory

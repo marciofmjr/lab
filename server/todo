@@ -6,8 +6,9 @@
 - [x] Tests for Medicos
 - [x] Migration and seeds for Exames (exams),
 - [x] Tests for Exames
-- [ ] Migration and seeds for Pacientes (customers),
-- [ ] Tests for Pacientes
-- [ ] Migration and seeds for Ordens de Serviço (orders),
-- [ ] Tests for Ordens de Serviço
+- [x] Migration and seeds for Pacientes (customers),
+- [x] Tests for Pacientes
+- [x] Migration and seeds for Ordens de Serviço (orders),
+- [x] Tests for Ordens de Serviço
 - [ ] Migration and seeds for Ordens de Serviço X Exame (orders_exams)
+- [ ] Tests for Ordens de Serviço X Exame

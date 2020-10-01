@@ -4,5 +4,9 @@ module.exports = (sequelize, DataTypes) => {
     specialty: DataTypes.STRING
   })
 
+  Doctor.associate = models => {
+    Doctor.hasMany(models.Order, { foreignKey: 'id', as: 'orders'})
+  }
+
   return Doctor
 }
