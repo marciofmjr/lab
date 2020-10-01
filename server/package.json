@@ -60,5 +60,10 @@
     "sequelize-cli": "^6.2.0",
     "sqlite3": "^5.0.0",
     "supertest": "^5.0.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-push": "npm run lint-fix && npm run test"
+    }
   }
 }
