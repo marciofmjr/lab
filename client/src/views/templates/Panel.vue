@@ -2,7 +2,6 @@
   <div>
     <v-navigation-drawer v-model="drawer" app>
       <v-list dense>
-
         <!-- Dashboard -->
         <v-list-item link :to="{ name: 'dashboard' }">
           <v-list-item-action>
@@ -12,7 +11,18 @@
             <v-list-item-title>Início</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
+        <!-- /Dashboard -->
 
+        <!-- Dashboard -->
+        <v-list-item link :to="{ name: 'collect-points' }">
+          <v-list-item-action>
+            <v-icon>mdi-hospital-box-outline</v-icon>
+          </v-list-item-action>
+          <v-list-item-content>
+            <v-list-item-title>Pontos de Coleta</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+        <!-- /Dashboard -->
       </v-list>
     </v-navigation-drawer>
 
@@ -41,7 +51,7 @@ export default {
   data() {
     return {
       drawer: null
-    }
+    };
   },
   computed: {
     user() {
@@ -53,11 +63,10 @@ export default {
       session.logout();
     }
   }
-}
+};
 </script>
 
 <style lang="sass">
 .v-app-bar.v-toolbar.v-sheet
   background: #037fff !important
-
 </style>

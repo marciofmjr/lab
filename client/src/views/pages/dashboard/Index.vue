@@ -7,7 +7,6 @@
     <v-row>
       <v-subheader>Bem-vindo {{ user.name }}</v-subheader>
     </v-row>
-
   </v-container>
 </template>
 

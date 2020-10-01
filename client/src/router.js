@@ -8,6 +8,9 @@ import Login from "@/views/templates/Login.vue";
 import Panel from "@/views/templates/Panel.vue";
 import Dashboard from "@/views/pages/dashboard/Index.vue";
 
+import CollectPoint from "@/views/pages/collect_points/CollectPoint.vue";
+import CollectPointIndex from "@/views/pages/collect_points/Index.vue";
+
 Vue.use(VueRouter);
 
 function toPanelIfLogged(to, from, next) {
@@ -56,6 +59,18 @@ const routes = [
         component: Dashboard,
         name: "dashboard",
         meta: { title: "Dashboard" }
+      },
+      {
+        path: "collect-points",
+        component: CollectPoint,
+        children: [
+          {
+            path: "/",
+            component: CollectPointIndex,
+            name: "collect-points",
+            meta: { title: "Pontos de Coleta" }
+          }
+        ]
       }
     ]
   }

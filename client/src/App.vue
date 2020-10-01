@@ -19,6 +19,10 @@ export default {
 h1
   padding-left: 16px
 
+.data-table-header-colored
+  .v-data-table-header
+    background-color: #eee
+
 .w100
   width: 100%
 
