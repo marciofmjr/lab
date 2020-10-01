@@ -15,4 +15,16 @@ export default {
 };
 </script>
 
-<style lang="sass"></style>
+<style lang="sass">
+.w100
+  width: 100%
+
+.swal-modal
+  .swal-title,
+  .swal-text,
+  .swal-footer *
+    font-family: 'Roboto'
+
+.swal-modal *
+  outline: none !important
+</style>
