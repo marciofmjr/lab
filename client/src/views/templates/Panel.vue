@@ -45,6 +45,17 @@
           </v-list-item-content>
         </v-list-item>
         <!-- /Exames -->
+
+        <!-- Pacientes -->
+        <v-list-item link :to="{ name: 'customers' }">
+          <v-list-item-action>
+            <v-icon>mdi-account-supervisor</v-icon>
+          </v-list-item-action>
+          <v-list-item-content>
+            <v-list-item-title>Pacientes</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+        <!-- /Pacientes -->
       </v-list>
     </v-navigation-drawer>
 

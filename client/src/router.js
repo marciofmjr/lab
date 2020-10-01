@@ -17,6 +17,9 @@ import DoctorIndex from "@/views/pages/doctors/Index.vue";
 import Exam from "@/views/pages/exams/Exam.vue";
 import ExamIndex from "@/views/pages/exams/Index.vue";
 
+import Customer from "@/views/pages/customers/Customer.vue";
+import CustomerIndex from "@/views/pages/customers/Index.vue";
+
 Vue.use(VueRouter);
 
 function toPanelIfLogged(to, from, next) {
@@ -99,6 +102,18 @@ const routes = [
             component: ExamIndex,
             name: "exams",
             meta: { title: "Exames" }
+          }
+        ]
+      },
+      {
+        path: "customers",
+        component: Customer,
+        children: [
+          {
+            path: "/",
+            component: CustomerIndex,
+            name: "customers",
+            meta: { title: "Pacientes" }
           }
         ]
       }
