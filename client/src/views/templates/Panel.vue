@@ -56,6 +56,17 @@
           </v-list-item-content>
         </v-list-item>
         <!-- /Pacientes -->
+
+        <!-- Pacientes -->
+        <v-list-item link :to="{ name: 'orders' }">
+          <v-list-item-action>
+            <v-icon>mdi-newspaper-variant-multiple</v-icon>
+          </v-list-item-action>
+          <v-list-item-content>
+            <v-list-item-title>Ordens de Serviço</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+        <!-- /Pacientes -->
       </v-list>
     </v-navigation-drawer>
 

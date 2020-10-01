@@ -17,6 +17,14 @@ const data = [
     price: 32.59,
     created_at: '2020-09-29T21:00:00.000Z',
     updated_at: '2020-09-29T21:00:00.000Z',
+  },
+  {
+    id: '77f9820c-bca4-4e2c-9a54-fa5ac9da5abb',
+    order_id: 'e8e13577-6d59-4468-90f4-c722beeed245',
+    exam_id: '57d71c9b-22ae-4128-93fd-1b7d9c9c0226', // Hemograma
+    price: 50.25,
+    created_at: '2020-09-29T21:00:00.000Z',
+    updated_at: '2020-09-29T21:00:00.000Z',
   }
 ]
 
