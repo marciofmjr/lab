@@ -16,6 +16,9 @@ export default {
 </script>
 
 <style lang="sass">
+h1
+  padding-left: 16px
+
 .w100
   width: 100%
 

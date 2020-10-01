@@ -5,6 +5,9 @@ import session from "@/services/session";
 
 import Login from "@/views/templates/Login.vue";
 
+import Panel from "@/views/templates/Panel.vue";
+import Dashboard from "@/views/pages/dashboard/Index.vue";
+
 Vue.use(VueRouter);
 
 function toPanelIfLogged(to, from, next) {
@@ -18,6 +21,17 @@ function toPanelIfLogged(to, from, next) {
   }
 }
 
+function guard(to, from, next) {
+  var token = session.getToken();
+  var user = session.getUser();
+
+  if (token && token.length > 100 && user && user.id) {
+    next();
+  } else {
+    next("/login");
+  }
+}
+
 const routes = [
   {
     path: "/",
@@ -27,6 +41,23 @@ const routes = [
     path: "/login",
     component: Login,
     beforeEnter: toPanelIfLogged
+  },
+  {
+    path: "/panel",
+    component: Panel,
+    beforeEnter: guard,
+    children: [
+      {
+        path: "/",
+        redirect: "/panel/dashboard"
+      },
+      {
+        path: "dashboard",
+        component: Dashboard,
+        name: "dashboard",
+        meta: { title: "Dashboard" }
+      }
+    ]
   }
 ];
 
