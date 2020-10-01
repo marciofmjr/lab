@@ -4,3 +4,10 @@ import moment from "moment";
 Vue.filter("createdAt", function(value) {
   return moment(value).format("DD/MM/YYYY HH:mm");
 });
+
+Vue.filter("money", function(value) {
+  return value.toLocaleString("pt-br", {
+    style: "currency",
+    currency: "BRL"
+  });
+});

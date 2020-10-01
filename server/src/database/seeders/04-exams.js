@@ -15,6 +15,27 @@ const data = [
     price: 32.59,
     created_at: '2020-09-29T21:00:00.000Z',
     updated_at: '2020-09-29T21:00:00.000Z',
+  },
+  {
+    id: '57d71c9b-22ae-4128-93fd-1b7d9c9c0226',
+    name: 'Hemograma',
+    price: 20,
+    created_at: '2020-09-29T21:00:00.000Z',
+    updated_at: '2020-09-29T21:00:00.000Z',
+  },
+  {
+    id: '2a99dfd4-22bf-4a31-ae83-86994ff7062c',
+    name: 'Glicemia em jejum',
+    price: 10.5,
+    created_at: '2020-09-29T21:00:00.000Z',
+    updated_at: '2020-09-29T21:00:00.000Z',
+  },
+  {
+    id: 'c977750c-3cbf-4cb5-b9f6-96d53591ca8e',
+    name: 'Colesterol e triglicerídeos',
+    price: 12.99,
+    created_at: '2020-09-29T21:00:00.000Z',
+    updated_at: '2020-09-29T21:00:00.000Z',
   }
 ]
 

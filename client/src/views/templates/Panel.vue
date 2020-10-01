@@ -34,6 +34,17 @@
           </v-list-item-content>
         </v-list-item>
         <!-- /Médicos -->
+
+        <!-- Exames -->
+        <v-list-item link :to="{ name: 'exams' }">
+          <v-list-item-action>
+            <v-icon>mdi-bandage</v-icon>
+          </v-list-item-action>
+          <v-list-item-content>
+            <v-list-item-title>Exames</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+        <!-- /Exames -->
       </v-list>
     </v-navigation-drawer>
 
