@@ -1,10 +1,14 @@
-- [ ] Vuetify installation/configuration
-- [ ] Login
-- [ ] Dashboard
-- [ ] Collect Points list
-- [ ] Exams list
-- [ ] Doctors list
-- [ ] Customers list
-- [ ] Orders list
-- [ ] Order create
-- [ ] Address auto-complete with zipcode (viacep)
+- [x] Vuetify installation/configuration
+- [x] Login
+- [x] Dashboard
+- [x] Collect Points list
+- [x] Exams list
+- [x] Doctors list
+- [x] Customers list
+- [x] Orders list
+- [x] Order create
+- [ ] After order create open new page with document to print (with protocolo number)
+- [ ] Create basic components tests
+- [ ] Create services/filters tests
+- [ ] Create cypress tests
+- [ ] Put widget to select order data ?

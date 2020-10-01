@@ -22,6 +22,7 @@ import CustomerIndex from "@/views/pages/customers/Index.vue";
 
 import Order from "@/views/pages/orders/Order.vue";
 import OrderIndex from "@/views/pages/orders/Index.vue";
+import OrderCreate from "@/views/pages/orders/Create.vue";
 
 Vue.use(VueRouter);
 
@@ -129,6 +130,12 @@ const routes = [
             component: OrderIndex,
             name: "orders",
             meta: { title: "Ordens de Serviço" }
+          },
+          {
+            path: "create",
+            component: OrderCreate,
+            name: "ordersCreate",
+            meta: { title: "Criar Ordem de Serviço" }
           }
         ]
       }

@@ -10,6 +10,15 @@
 
     <v-row justify="end">
       <v-col cols="12">
+        <v-btn
+          id="addOrdersButton"
+          large
+          color="primary"
+          :to="{ name: 'ordersCreate' }"
+          >Criar Ordem de Serviço</v-btn
+        >
+      </v-col>
+      <v-col cols="12">
         <div class="data-table-search-container">
           <v-text-field
             id="ordersFilterInput"
@@ -39,9 +48,6 @@
         <template v-slot:[`item.date`]="{ item }">
           <span>{{ item.date | createdAt }}</span>
         </template>
-        <!--<template v-slot:[`item.gender`]="{ item }">
-          <span>{{ item.gender | gender }}</span>
-        </template> -->
       </v-data-table>
     </v-row>
   </v-container>
