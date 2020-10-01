@@ -17,6 +17,9 @@ const sanitization = {
     },
     collectPointId: {
       type: 'string'
+    },
+    exams: {
+      type: 'array'
     }
   }
 }

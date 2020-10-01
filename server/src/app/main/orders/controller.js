@@ -1,4 +1,4 @@
-const { Order } = require('./../models')
+const { Order, Exam, OrderExam } = require('./../models')
 const RESPONSE = require('./../../services/responses')
 const sanitizer = require('./sanitizer')
 const validator = require('./validator')
@@ -16,8 +16,26 @@ class OrderController {
       }
 
       const order = await Order.create(sanitizedPayload)
+      const orderExams = []
 
-      return RESPONSE.with200(res, mapper.toModel(order), 'user created successfully')
+      for (const exam of sanitizedPayload.exams) {
+        const orderExamRow = await OrderExam.create({
+          orderId: order.id,
+          examId: exam.id,
+          price: exam.price
+        })
+        const orderExam = JSON.parse(JSON.stringify(orderExamRow))
+        const fullExam = await Exam.findOne({ where: { id: exam.id } })
+        orderExams.push({
+          id: orderExam.id,
+          name: fullExam.name,
+          price: orderExam.price
+        })
+      }
+
+      const orderMapped = mapper.toModel(order)
+      orderMapped.exams = orderExams
+      return RESPONSE.with200(res, orderMapped, 'user created successfully')
     } catch (error) {
       return RESPONSE.with500(res, error)
     }

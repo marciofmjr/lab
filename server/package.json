@@ -58,6 +58,7 @@
     "husky": "^4.3.0",
     "jest": "^26.4.2",
     "sequelize-cli": "^6.2.0",
+    "sqlite3": "^5.0.0",
     "supertest": "^5.0.0"
   }
 }

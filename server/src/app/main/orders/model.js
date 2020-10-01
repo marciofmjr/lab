@@ -11,6 +11,11 @@ module.exports = (sequelize, DataTypes) => {
     Order.belongsTo(models.Customer, { foreignKey: 'customerId', as: 'customer'})
     Order.belongsTo(models.Doctor, { foreignKey: 'doctorId', as: 'doctor'})
     Order.belongsTo(models.CollectPoint, { foreignKey: 'collectPointId', as: 'collectPoint'})
+    Order.belongsToMany(models.Exam, {
+      through: 'order_exams',
+      foreignKey: 'orderId',
+      as: 'exams'
+    })
   }
 
   return Order

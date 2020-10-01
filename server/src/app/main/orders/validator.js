@@ -21,6 +21,10 @@ const validation = {
     collectPointId: {
       type: 'uuid',
       optional: false
+    },
+    exams: {
+      type: 'array',
+      optional: false
     }
   }
 }

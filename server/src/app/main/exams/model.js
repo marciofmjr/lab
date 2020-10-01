@@ -4,5 +4,13 @@ module.exports = (sequelize, DataTypes) => {
     price: DataTypes.DOUBLE
   })
 
+  Exam.associate = models => {
+    Exam.belongsToMany(models.Order, {
+      through: 'order_exams',
+      foreignKey: 'examId',
+      as: 'orders'
+    })
+  }
+
   return Exam
 }
