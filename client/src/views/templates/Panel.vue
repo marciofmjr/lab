@@ -13,16 +13,27 @@
         </v-list-item>
         <!-- /Dashboard -->
 
-        <!-- Dashboard -->
+        <!-- Pontos de Coleta -->
         <v-list-item link :to="{ name: 'collect-points' }">
           <v-list-item-action>
-            <v-icon>mdi-hospital-box-outline</v-icon>
+            <v-icon>mdi-hospital-building</v-icon>
           </v-list-item-action>
           <v-list-item-content>
             <v-list-item-title>Pontos de Coleta</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
-        <!-- /Dashboard -->
+        <!-- /Pontos de Coleta -->
+
+        <!-- Médicos -->
+        <v-list-item link :to="{ name: 'doctors' }">
+          <v-list-item-action>
+            <v-icon>mdi-doctor</v-icon>
+          </v-list-item-action>
+          <v-list-item-content>
+            <v-list-item-title>Médicos</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+        <!-- /Médicos -->
       </v-list>
     </v-navigation-drawer>
 

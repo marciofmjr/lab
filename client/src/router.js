@@ -11,6 +11,9 @@ import Dashboard from "@/views/pages/dashboard/Index.vue";
 import CollectPoint from "@/views/pages/collect_points/CollectPoint.vue";
 import CollectPointIndex from "@/views/pages/collect_points/Index.vue";
 
+import Doctor from "@/views/pages/doctors/Doctor.vue";
+import DoctorIndex from "@/views/pages/doctors/Index.vue";
+
 Vue.use(VueRouter);
 
 function toPanelIfLogged(to, from, next) {
@@ -69,6 +72,18 @@ const routes = [
             component: CollectPointIndex,
             name: "collect-points",
             meta: { title: "Pontos de Coleta" }
+          }
+        ]
+      },
+      {
+        path: "doctors",
+        component: Doctor,
+        children: [
+          {
+            path: "/",
+            component: DoctorIndex,
+            name: "doctors",
+            meta: { title: "Médicos" }
           }
         ]
       }
