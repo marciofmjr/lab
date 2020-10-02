@@ -9,7 +9,7 @@
       <v-row>
         <v-col cols="12">
           <h3>Ordem de Serviço</h3>
-          <h2>
+          <h2 id="code">
             Código de Retirada: <span class="code"> {{ orderId }}</span>
           </h2>
         </v-col>
