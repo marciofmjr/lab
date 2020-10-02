@@ -1,8 +1,6 @@
 # Lab
 
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
-[![Inline docs](http://inch-ci.org/github/marciofmjr/lab.svg?branch=master)](http://inch-ci.org/github/marciofmjr/lab)
-[![Inline docs](http://inch-ci.org/github/marciofmjr/agrimin-backend.svg?branch=master)](http://inch-ci.org/github/marciofmjr/agrimin-backend)
 
 
 :hospital: (Laboratório) é um projeto para demonstrar habilidades de desenvolvimento. Ele é um painel de uma clínica que deve cadastrar ordens de serviço de pacientes que vão fazer exames médicos.
@@ -37,6 +35,12 @@ npm install
 ```bash
 # Entrar na pasta do projeto: ex: cd ~/dev/projetos/lab
 
+# Inicia o projeto do client
+cd client
+npm run start
+
+# Inicia o projeto do server
+cd ../server
 npm run start
 ```
 
@@ -53,3 +57,14 @@ npm run test
 cd ../server
 npm run test
 ```
+
+## Adicionais
+
+### Husky
+- Os projetos tem o husky configurado, para quando for feito um commit ou um push, ele primeiro rodar as validações de lint e os testes para ver tudo está passando certinho. Somente se tudo estiver OK ele prossegue com a ação de commit ou push
+
+### Github Actions (CI)
+- Também foi configurado o Github Actions como CI para rodar as validações de lint e todos os testes
+
+### Commitizen
+- Foi usado o commitizen para padronizar as mensagens dos commits
