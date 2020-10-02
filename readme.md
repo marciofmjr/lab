@@ -37,11 +37,19 @@ npm install
 
 # Inicia o projeto do client
 cd client
-npm run start
+npm run start # o terminal ficara travado executando o processo
+
+# abra uma nova aba no terminal para não parar o processo do client e iniciar o processo do servidor:
 
 # Inicia o projeto do server
 cd ../server
 npm run start
+
+# Após os 2 projetos estiverem rodando, acesse no navegador o endereço:
+# http://localhost:8080
+# O usuário e senha para fazer login no painel é:
+# email: marcio@laboratorio.com
+# senha: admin123
 ```
 
 ## Testes
@@ -51,7 +59,10 @@ npm run start
 
 # Testar projeto client
 cd client
-npm run test
+npm run test # testes unitários
+npm run cypress # testes e2e
+
+# PARA RODAR OS TESTES DO CYPRESS, OS DOIS PROJETOS PRECISAM ESTAR RODANDO (client e server)
 
 # Testar projeto server
 cd ../server
@@ -61,10 +72,13 @@ npm run test
 ## Adicionais
 
 ### Husky
-- Os projetos tem o husky configurado, para quando for feito um commit ou um push, ele primeiro rodar as validações de lint e os testes para ver tudo está passando certinho. Somente se tudo estiver OK ele prossegue com a ação de commit ou push
+- Os projetos tem o husky configurado, para quando for feito um commit ou um push, ele primeiro rodar as validações de lint e os testes para ver se tudo está passando certinho. Somente se tudo estiver OK ele prossegue com a ação de commit ou push
 
 ### Github Actions (CI)
 - Também foi configurado o Github Actions como CI para rodar as validações de lint e todos os testes
 
 ### Commitizen
 - Foi usado o commitizen para padronizar as mensagens dos commits
+
+### Cypress
+- Foi adicionado o cypress para fazer os testes e2e, toda vez que é feito um push, ele roda esses testes
