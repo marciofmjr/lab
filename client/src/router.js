@@ -23,6 +23,7 @@ import CustomerIndex from "@/views/pages/customers/Index.vue";
 import Order from "@/views/pages/orders/Order.vue";
 import OrderIndex from "@/views/pages/orders/Index.vue";
 import OrderCreate from "@/views/pages/orders/Create.vue";
+import OrderView from "@/views/pages/orders/View.vue";
 
 Vue.use(VueRouter);
 
@@ -56,7 +57,9 @@ const routes = [
   {
     path: "/login",
     component: Login,
-    beforeEnter: toPanelIfLogged
+    beforeEnter: toPanelIfLogged,
+    name: "login",
+    meta: { title: "Entrar no Lab" }
   },
   {
     path: "/panel",
@@ -136,6 +139,12 @@ const routes = [
             component: OrderCreate,
             name: "ordersCreate",
             meta: { title: "Criar Ordem de Serviço" }
+          },
+          {
+            path: "print/:id",
+            component: OrderView,
+            name: "ordersView",
+            meta: { title: "Visualizar Ordem de Serviço" }
           }
         ]
       }

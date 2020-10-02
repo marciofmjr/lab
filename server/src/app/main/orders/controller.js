@@ -43,7 +43,7 @@ class OrderController {
 
   async list(req, res) {
     try {
-      const q = querify(req.query, ['date'])
+      const q = querify(req.query, ['date', 'id'])
       if (q.error) {
         return RESPONSE.with422(res, q.message)
       }

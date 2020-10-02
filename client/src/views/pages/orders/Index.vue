@@ -48,6 +48,11 @@
         <template v-slot:[`item.date`]="{ item }">
           <span>{{ item.date | createdAt }}</span>
         </template>
+        <template v-slot:[`item.actions`]="{ item }">
+          <v-icon medium class="mr-4" @click="view(item)">
+            mdi-eye
+          </v-icon>
+        </template>
       </v-data-table>
     </v-row>
   </v-container>
@@ -68,12 +73,22 @@ export default {
         { text: "Convênio", value: "healthInsurance" },
         { text: "Cliente", value: "customer.name" },
         { text: "Médico", value: "doctor.name" },
-        { text: "Ponto de Coleta", value: "collectPoint.name" }
+        { text: "Ponto de Coleta", value: "collectPoint.name" },
+        {
+          text: "Visualizar",
+          value: "actions",
+          sortable: false,
+          width: "100px",
+          align: "right"
+        }
       ],
       tableData: []
     };
   },
   methods: {
+    view(item) {
+      this.$router.push({ name: "ordersView", params: { id: item.id } });
+    },
     async getTableData() {
       this.tableLoader = true;
       try {

@@ -201,14 +201,15 @@ export default {
         .format("YYYY-MM-DDTHH:mm:ss");
 
       try {
-        await ordersApi.create(payload);
+        const response = await ordersApi.create(payload);
         const ok = await alerty(
           "Sucesso",
           "Ordem de serviço criada com sucesso!!"
         );
         if (ok) {
           this.$router.push({
-            name: "orders"
+            name: "ordersView",
+            params: { id: response.data.id }
           });
         }
       } catch (error) {
