@@ -9,10 +9,12 @@
     "test:unit": "vue-cli-service test:unit",
     "test:e2e": "vue-cli-service test:e2e",
     "lint": "vue-cli-service lint",
-    "cypress-headless": "echo cypress",
     "lint-fix": "vue-cli-service lint --fix",
     "test": "npm run test:unit",
-    "test-watch": "npm run test:unit --watch"
+    "test-watch": "npm run test:unit --watch",
+    "before-cypress": "cd ../server && npm run db-reset",
+    "cypress": "npm run before-cypress && npx cypress run --headless",
+    "cypress-open": "npm run before-cypress && npx cypress run"
   },
   "dependencies": {
     "axios": "^0.20.0",
@@ -49,7 +51,7 @@
   "husky": {
     "hooks": {
       "pre-commit": "npm run lint-fix && npm run test",
-      "pre-push": "npm run cypress-headless"
+      "pre-push": "npm run cypress"
     }
   }
 }

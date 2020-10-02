@@ -1,5 +1,5 @@
 {
   "pluginsFile": "tests/e2e/plugins/index.js",
   "video": false,
-  "baseUrl": "http://localhost:8081/#/"
+  "baseUrl": "http://localhost:8080/#/"
 }

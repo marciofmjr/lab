@@ -9,44 +9,76 @@
       <v-row>
         <v-col cols="12">
           <h3>Ordem de Serviço</h3>
-          <h2 id="code">
-            Código de Retirada: <span class="code"> {{ orderId }}</span>
+          <h2>
+            Código de Retirada:
+            <span class="code" id="code">{{ orderId }}</span>
           </h2>
         </v-col>
       </v-row>
 
       <v-row class="resume" v-if="order && order.customer">
         <v-col cols="12">
-          <h2>Paciente</h2>
+          <h2 id="titleCustomer">Paciente</h2>
           <ul>
-            <li><b>Nome:</b> {{ order.customer.name }}</li>
-            <li><b>Sexo:</b> {{ order.customer.gender | gender }}</li>
-            <li><b>Nascimento:</b> {{ order.customer.birthday | date }}</li>
-            <li><b>Endereço:</b> {{ order.customer.address }}</li>
+            <li>
+              <b>Nome:</b>
+              <span id="customerName">{{ order.customer.name }}</span>
+            </li>
+            <li>
+              <b>Sexo:</b>
+              <span id="customerGender">{{
+                order.customer.gender | gender
+              }}</span>
+            </li>
+            <li>
+              <b>Nascimento:</b>
+              <span id="customerBirthday">{{
+                order.customer.birthday | date
+              }}</span>
+            </li>
+            <li>
+              <b>Endereço:</b>
+              <span id="customerAddress">{{ order.customer.address }}</span>
+            </li>
           </ul>
         </v-col>
         <v-col cols="12">
-          <h2>Médico</h2>
+          <h2 id="titleDoctor">Médico</h2>
           <ul>
-            <li><b>Nome:</b> {{ order.doctor.name }}</li>
-            <li><b>Especialidade:</b> {{ order.doctor.specialty }}</li>
+            <li>
+              <b>Nome:</b> <span id="doctorName">{{ order.doctor.name }}</span>
+            </li>
+            <li>
+              <b>Especialidade:</b>
+              <span id="doctorSpecialty">{{ order.doctor.specialty }}</span>
+            </li>
           </ul>
         </v-col>
       </v-row>
 
       <v-row class="resume" v-if="order && order.collectPoint">
         <v-col cols="12">
-          <h2>Ponto Coleta</h2>
+          <h2 id="titleCollectPoint">Ponto Coleta</h2>
           <ul>
-            <li><b>Nome:</b> {{ order.collectPoint.name }}</li>
-            <li><b>Endereço:</b> {{ order.collectPoint.address }}</li>
+            <li>
+              <b>Nome:</b>
+              <span id="collectPointName">{{ order.collectPoint.name }}</span>
+            </li>
+            <li>
+              <b>Endereço:</b>
+              <span id="collectPointAddress">{{
+                order.collectPoint.address
+              }}</span>
+            </li>
           </ul>
         </v-col>
         <v-col cols="12">
-          <h2>Exames</h2>
+          <h2 id="titleExam">Exames</h2>
           <ul v-if="order && order.exams && order.exams.length">
             <li v-for="(exam, index) in order.exams" :key="index">
-              {{ exam.name }} - {{ exam.price | money }}
+              <span :id="'exam_' + index"
+                >{{ exam.name }} - {{ exam.price | money }}</span
+              >
             </li>
           </ul>
         </v-col>

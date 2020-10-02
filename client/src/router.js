@@ -141,7 +141,7 @@ const routes = [
             meta: { title: "Criar Ordem de Serviço" }
           },
           {
-            path: "print/:id",
+            path: "view/:id",
             component: OrderView,
             name: "ordersView",
             meta: { title: "Visualizar Ordem de Serviço" }
