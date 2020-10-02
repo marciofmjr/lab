@@ -55,13 +55,30 @@
               ></v-text-field>
             </v-col>
             <v-col cols="12" md="2">
-              <v-text-field
-                id="date"
-                v-model="form.data.date"
-                :rules="form.rules.date"
-                label="Data"
-                required
-              ></v-text-field>
+              <v-menu
+                v-model="modalMenu"
+                :close-on-content-click="false"
+                :nudge-right="40"
+                transition="scale-transition"
+                offset-y
+                min-width="290px"
+              >
+                <template v-slot:activator="{ on, attrs }">
+                  <v-text-field
+                    v-model="dateFormatted"
+                    label="Data"
+                    prepend-icon="mdi-calendar"
+                    readonly
+                    v-bind="attrs"
+                    @blur="date = parseDate(dateFormatted)"
+                    v-on="on"
+                  ></v-text-field>
+                </template>
+                <v-date-picker
+                  v-model="date"
+                  @input="modalMenu = false"
+                ></v-date-picker>
+              </v-menu>
             </v-col>
             <v-col cols="12" md="8">
               <v-select
@@ -113,8 +130,16 @@ import moment from "moment-timezone";
 
 export default {
   name: "ordersCreate",
+  watch: {
+    date() {
+      this.dateFormatted = this.formatDate(this.date);
+    }
+  },
   data() {
     return {
+      modalMenu: false,
+      date: new Date().toISOString().substr(0, 10),
+      dateFormatted: this.formatDate(new Date().toISOString().substr(0, 10)),
       error: false,
       customers: [],
       doctors: [],
@@ -128,7 +153,7 @@ export default {
           collectPointId: null,
           healthInsurance: "",
           exams: [],
-          date: moment.tz("America/Sao_Paulo").format("DD/MM/YYYY")
+          date: new Date().toISOString().substr(0, 10)
         },
         rules: {
           customer: [v => !!v || "Paciente é obrigatório"],
@@ -145,6 +170,16 @@ export default {
     };
   },
   methods: {
+    parseDate(date) {
+      if (!date) return null;
+      const [day, month, year] = date.split("/");
+      return `${year}-${month.padStart(2, "0")}-${day.padStart(2, "0")}`;
+    },
+    formatDate(date) {
+      if (!date) return null;
+      const [year, month, day] = date.split("-");
+      return `${day}/${month}/${year}`;
+    },
     async onSubmit() {
       const payload = formify(this.form.data);
       const formattedExams = [];
@@ -161,7 +196,7 @@ export default {
       }
       payload.exams = formattedExams;
       payload.date = moment
-        .tz(moment(payload.date, "DD/MM/YYYY"), "America/Sao_Paulo")
+        .tz(moment(this.date, "YYYY-MM-DD"), "America/Sao_Paulo")
         .utc()
         .format("YYYY-MM-DDTHH:mm:ss");
 
